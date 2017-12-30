@@ -57,25 +57,25 @@ app.post('/contacts', function(request, response) {
   });
 });
 
-// app.put('/contacts/:id', (request, response) => {
-//   client.query(
-//     `UPDATE contacts
-//     SET
-//       name=$1, email=$2, message=$3;
-//     `,
-//     [
-//       request.body.name,
-//       request.body.email,
-//       request.body.message,
-//     ]
-//   )
-//     .then(() => {
-//       response.send('update complete')
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// });
+app.put('/contacts/update/:id', (request, response) => {
+  client.query(
+    `UPDATE contacts
+    SET
+      name=$1, email=$2, message=$3;
+    `,
+    [
+      request.body.name,
+      request.body.email,
+      request.body.message,
+    ]
+  )
+    .then(() => {
+      response.send('update complete')
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});
 
 app.delete('/contacts/delete/:id', (request, response) => {
   console.log('delete id: ' + request.params.id);

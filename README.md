@@ -5,9 +5,12 @@
 
 ## Overview
 Extra practice in setting up a server and database then connecting it with a simple form.
+* A public facing page for contact form submissions
+* A 'private' facing page for managing the submissions
 
 ## Getting Started
-Make sure to install the required npm scripts
+* Make sure to install the required npm scripts.
+* There is no starter data in the database. To enter in new contact form submissions, enter in new submissions in the index.html page.
 
 ## Architecture
 This exercise includes these technologies: JavaScript, JQuery, PostgreSQL, NPM, Express, Nodemon, Bodyparser

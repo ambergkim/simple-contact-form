@@ -21,20 +21,13 @@ app.get('/', (request, response) => {
   response.sendFile('index.html', {root: './public'});
 });
 
+app.get('/account', (request, response) => {
+  response.sendFile('account.html', {root: './public'});
+});
+
 app.get('/contacts', (request, response) => {
   client.query(`
     SELECT * FROM contacts;
-    `
-  ).then(function(results){
-    response.send(results.rows);
-  }).catch(err => {
-    console.error(err);
-  });
-});
-
-app.get('/contacts/:id', (request, response) => {
-  client.query(`
-    SELECT * FROM contacts WHERE id=${request.params.id};
     `
   ).then(function(results){
     response.send(results.rows);
@@ -57,16 +50,17 @@ app.post('/contacts', function(request, response) {
   });
 });
 
-app.put('/contacts/update/:id', (request, response) => {
+app.put('/contacts/:id', (request, response) => {
   client.query(
     `UPDATE contacts
-    SET
-      name=$1, email=$2, message=$3;
+    SET name=$1, email=$2, message=$3
+    WHERE id=$4;
     `,
     [
       request.body.name,
       request.body.email,
       request.body.message,
+      request.params.id
     ]
   )
     .then(() => {
@@ -77,10 +71,11 @@ app.put('/contacts/update/:id', (request, response) => {
     });
 });
 
-app.delete('/contacts/delete/:id', (request, response) => {
+app.delete('/contacts/:id', (request, response) => {
   console.log('delete id: ' + request.params.id);
   client.query(
-    `DELETE FROM contacts WHERE id=${request.params.id};`
+    `DELETE FROM contacts WHERE id=$1;`,
+    [request.params.id]
   )
     .then(() => {
       response.send('Delete complete')
@@ -93,3 +88,20 @@ app.delete('/contacts/delete/:id', (request, response) => {
 app.listen(PORT, function() {
   console.log(`server started on: ${PORT}`);
 });
+
+function loadDB() {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    contacts (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(255),
+      email VARCHAR(255),
+      message TEXT
+    );`
+  )
+    .catch(err => {
+      console.error(err)
+    });
+}
+
+loadDB();

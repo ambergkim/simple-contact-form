@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Manage your contacts and messages</h1>
+  <p>Don't forget to refresh your list after you make a change</p>
+  <button id="load-contacts">Load/Refresh Contacts</button>
+  <form id="update-contacts">
+    <fieldset>
+      <legend>Update/correct an entry</legend>
+      <input id="id" type="number" placeholder="id" required>
+      <input id="name" type="text" placeholder="name" required>
+      <input id="email" type="email" placeholder="email" required>
+      <textarea id="message" placeholder="message" required></textarea>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+  <section id="contacts">
+
+  </section>
+  <form id="delete-contact">
+    <fieldset>
+      <legend>Delete Contact</legend>
+      <input id="delete-id" type="number" placeholder="id" required>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -17,6 +17,7 @@ This exercise includes these technologies: JavaScript, JQuery, PostgreSQL, NPM, 
 
 ## Change Log
 12-29-2017 5:13pm - Basic application is function. Able to get info of the table from the database and to post the data to the database using the html form.
+12-30-2017 11:48pm - MVP CRUD operations.
 
 ## Credits and Collaborations
 * jQuery v3.2.1 | (c) JS Foundation and other contributors | jquery.org/license 

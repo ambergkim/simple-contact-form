@@ -4,7 +4,7 @@
 **Version**: 1.0.0
 
 ## Overview
-Extra practice in setting up a server and database then connecting it with a simple form.
+Practice in setting up a Full Stack CRUD application from scratch
 * A public facing page for contact form submissions
 * A 'private' facing page for managing the submissions
 

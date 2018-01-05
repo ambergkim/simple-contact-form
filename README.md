@@ -13,7 +13,14 @@ Practice in setting up a Full Stack CRUD application from scratch
 * There is no starter data in the database. To enter in new contact form submissions, enter in new submissions in the index.html page.
 
 ## Architecture
-This exercise includes these technologies: JavaScript, JQuery, PostgreSQL, NPM, Express, Nodemon, Bodyparser
+This exercise includes these technologies:
+* JavaScript
+* JQuery
+* PostgreSQL
+* NPM
+* Express
+* Nodemon
+* Bodyparser
 
 ## Change Log
 * 12-29-2017 5:13pm - Basic application is function. Able to get info of the table from the database and to post the data to the database using the html form.

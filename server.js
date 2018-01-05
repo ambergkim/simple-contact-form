@@ -1,5 +1,6 @@
 'use strict';
 
+const cool = require('cool-ascii-faces');//for heroku tests
 const pg = require('pg');
 const express = require('express');
 const bp = require('body-parser');
@@ -16,6 +17,11 @@ client.connect();
 app.use(bp.json());
 app.use(bp.urlencoded({extended: true}));
 app.use(express.static('./public'));
+
+//cool ascii test for heroku
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
 
 app.get('/', (request, response) => {
   response.sendFile('index.html', {root: './public'});

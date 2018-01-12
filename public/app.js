@@ -33,10 +33,10 @@ function updateContacts(id, name, email, message) {
     url: `/contacts/${id}`,
     method: 'PUT',
     data: {
-      name: `${name}`,
-      email: `${email}`,
-      message: `${message}`
-    }
+      name,
+      email,
+      message
+    } //condensed since the key and variables have the same names.
   }).then(data => {
     console.log('put data: ' + data);
   });

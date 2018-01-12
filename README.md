@@ -14,12 +14,21 @@ Practice in setting up a Full Stack CRUD application from scratch
 
 ## Architecture
 This exercise includes these technologies:
+<<<<<<< HEAD
 * JavaScript
 * JQuery
 * PostgreSQL
 * NPM
 * Express
 * Nodemon
+=======
+* JavaScript,
+* JQuery,
+* PostgreSQL,
+* NPM,
+* Express,
+* Nodemon,
+>>>>>>> c197b736d6e1f15ea20c1d3a91ab4f6febef21f6
 * Bodyparser
 
 ## Change Log
